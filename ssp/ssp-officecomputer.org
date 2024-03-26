@@ -1,0 +1,30 @@
+#+TITLE: System Specific Policy of the Office Computer for Ransomware
+#+AUTHOR: Semir Hot, Harrison Maksimik
+* Statement of Policy
+** Purpose
+The purpose of this policy is to provide a set of procedures that should be implemented when interacting with and setting up the computer located in the office of our facility. This device is used by management to conduct regular business operations, thus, much of the data stored on the computer may be sensitive. The goal of this policy is to prevent the intrusion of ransomware or other malicious programs into the device.
+
+** Scope
+The scope of this system-specific policy extends only to the office computer in our organization's facility, the data on that computer, any network traffic to or from the computer, as well as any users or administrators of the computer.
+
+** Responsibilities
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and to keep this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+* Security Controls
+** Authentication
+Our organization's password policy must be adhered to by all users of the office computer. The same credentials used in Modisoft should be the credentials used to access the computer. Access control for this device is controlled through the operating system's access control policy, rather than the authentication access control system provided by Modisoft. The administrator account should be handled separately by the system administrator, while still adhering to the system-specific policy for passwords.
+
+** Email Safety
+All users of this device must use caution when managing their Email. Refer to the system-specific policy for our organization's Email system for our procedures for safe Email usage. It is particularly important that users of this system be vigilant for phishing Emails which contain suspicious executable files, as this device may be a vector for ransomware to other parts of our network.
+
+** Software Management
+Only system administrators should be able to modify, install or remove software from this device. Additionally, the execution of any non-whitelisted executable files should be prohibited through the operating system's policies.
+
+** Access Control System
+The operating system's built-in access control system should be used to prevent access to critical system files from general user accounts. On Linux systems, some mandatory access control solution such as SELinux (when supported) or AppArmor should be used. On Windows systems, User Account Control (UAC) should be used.
+
+** Network Access
+This device should only be used to access our organization's network via Ethernet. Wireless and Bluetooth device drivers should be disabled if possible. It may be necessary for this device to use our organization's private VPN in order to access certain network resources over an encrypted connection. Users of this device should ensure that sensitive information is not transmitted over the network without encryption; for example, applications that are served over HTTP as opposed to HTTPS should be avoided when submitting information.
+
+* Scheduled Reviews
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the /Security Controls/ section should be carefully reviewed during this time.

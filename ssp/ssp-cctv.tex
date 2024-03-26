@@ -1,0 +1,62 @@
+% Created 2024-03-10 Sun 13:53
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Semir Hot, Harrison Maksimik}
+\date{\today}
+\title{System Specific Policy for CCTV and DVR Systems}
+\hypersetup{
+ pdfauthor={Semir Hot, Harrison Maksimik},
+ pdftitle={System Specific Policy for CCTV and DVR Systems},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.2 (Org mode 9.6.12)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Statement of Policy}
+\label{sec:org997792e}
+\subsection{Purpose}
+\label{sec:org1a31998}
+The purpose of this policy is to provide a set of procedures that should be implemented when interacting with and setting up the CCTV and DVR system for our organization, including the storage and retrieval of archived footage.
+
+\subsection{Scope}
+\label{sec:orgd759633}
+The scope of this system-specific policy extends only to the CCTV and DVR systems which are connected to our organization's network, all data that travels over the network from these devices, all archived footage from these devices, and all users who connect to, configure, or view footage from these devices.
+
+\subsection{Responsibilities}
+\label{sec:org3b196f2}
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and to keep this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+\section{Security Controls}
+\label{sec:org188fd39}
+\subsection{Authentication}
+\label{sec:org0e03f69}
+Our organization's password policy must be adhered to by all users of the CCTV system. The same credentials used in Modisoft should be the credentials used to access our organization's CCTV and DVR footage. Access control for this system is also handled via the Modisoft authentication service.
+
+\subsection{Data Storage}
+\label{sec:orgeb63398}
+In order to comply with requests for surveillance footage, our organization will retain CCTV footage for a period of 60 days in a an archive format. In particular, our footage should be archived in the H. 265 encoding when available to reduce file size in storage. 
+
+\subsection{Remote Connection}
+\label{sec:org240f0c6}
+The CCTV system used by our organization allows for remote access to a live feed of each of our CCTV cameras, as well as archived CCTV footage. System administrators must ensure that only authorized personnel who are in our organization's facilities and connected to our organization's network are able to connect to this remote access portal.
+
+\section{Scheduled Reviews}
+\label{sec:orgd45c248}
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the \emph{Security Controls} section should be carefully reviewed during this time.
+\end{document}

@@ -1,0 +1,21 @@
+#+TITLE: System Specific Policy for Verifone
+#+AUTHOR: Semir Hot, Harrison Maksimik
+* Statement of Policy
+** Purpose
+The purpose of this policy is to provide a set of procedures that should be implemented when interacting with our third-party credit card system vendor, Verifone. Our organization has very little control over this system, so the primary goal of this policy will be to introduce other system-specific policies that should be followed when interacting with this system.
+
+** Scope
+The scope of this system-specific policy extends only to the services provided by the Verifone credit card system vendor. Any employee, contractor, third party worker or other personnel are required to observe the procedures listed in this policy.
+
+** Responsibilities
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and to keep this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+* Security Controls
+** Authentication
+Our organization's password policy must be adhered to by all users of the Verifone service. These login credentials, however, are not managed via Modisoft; it should be the duty of the managerial staff whom access to the Verifone system is given to understand and implement this password policy. A record of all users with login credentials to the Verifone service should be maintained so that password update procedures can be properly applied as needed.
+
+** Inspection of Credit Card Machines
+In order to ensure the safety of our customers, credit card machines must be routinely inspected for malicious modifications. This can include credit card skimmers, which are commonly installed on gas pumps. Daily inspections should be made on the gas pumps, and suspicious activity should be monitored via the CCTV system.
+
+* Scheduled Reviews
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the /Security Controls/ section should be carefully reviewed during this time.

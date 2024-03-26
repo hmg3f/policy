@@ -1,0 +1,62 @@
+% Created 2024-03-10 Sun 13:53
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Semir Hot, Harrison Maksimik}
+\date{\today}
+\title{System Specific Policy for Wireless Access Points}
+\hypersetup{
+ pdfauthor={Semir Hot, Harrison Maksimik},
+ pdftitle={System Specific Policy for Wireless Access Points},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.2 (Org mode 9.6.12)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Statement of Policy}
+\label{sec:org042cfb8}
+\subsection{Purpose}
+\label{sec:org8c61a6a}
+The purpose of this policy is to provide a set of procedures that should be implemented when interacting with and setting up wireless access points in our organization's network. 
+
+\subsection{Scope}
+\label{sec:org368d8dd}
+The scope of this system-specific policy extends only to the wireless access point systems which are connected to our organization's network, all data that travels over this wireless access point, and all users who connect to, configure, or view traffic from these devices.
+
+\subsection{Responsibilities}
+\label{sec:orgeb44f31}
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and to keep this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+\section{Security Controls}
+\label{sec:orgf93bb86}
+\subsection{Authentication}
+\label{sec:org94e1e1c}
+Our organization's password policy must be adhered to by all users of the wireless access point system. The same credentials used in Modisoft should be the credentials used to access our organization's wireless network. A guest network can be created which is fully segregated from all other subnets, however, guest network access should be restricted to only contractors and other third-party workers who do not have a Modisoft account. WPA3 should be used for wireless access point authentication, and the administrator login should be changed from the factory default immediately upon installation.
+
+\subsection{Encryption of Data}
+\label{sec:org735dd5a}
+Any sensitive data being transmitted over the wireless network should be encrypted using protocols such as SSL. Should an employee be prompted to enter sensitive data over a non-secure connection (i.e. via HTTP rather than HTTPS), management should be notified before any information is submitted. Some systems may require a connection to a private VPN within our network in order to ensure encryption over transit, or in order to access systems from outside our physical network.
+
+\subsection{Device Settings}
+\label{sec:org61f0f0e}
+It is recommended that employees disable the auto-connect feature of their wireless devices; some attackers may create fake networks with identical SSIDs in order to trick auto-connect systems into logging into the fake network. It may then be possible for an attacker to perform a man-in-the-middle attack, in which an otherwise safe download is replaced with a fake, malicious program. This could be a concerning vector for ransomware.
+
+\section{Scheduled Reviews}
+\label{sec:org620096b}
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the \emph{Security Controls} section should be carefully reviewed during this time.
+\end{document}

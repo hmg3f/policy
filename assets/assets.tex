@@ -1,0 +1,193 @@
+% Created 2024-03-10 Sun 13:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Semir Hot, Harrison Maksimik}
+\date{\today}
+\title{Assets Analysis}
+\hypersetup{
+ pdfauthor={Semir Hot, Harrison Maksimik},
+ pdftitle={Assets Analysis},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.2 (Org mode 9.6.12)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Assets List}
+\label{sec:orge0ba9c4}
+\begin{longtable}{llll}
+\caption{Assets, Access Classification, Impact on Business}
+\\[0pt]
+Category & Asset & Classification & Impact\\[0pt]
+\hline
+\endfirsthead
+\multicolumn{4}{l}{Continued from previous page} \\[0pt]
+\hline
+
+Category & Asset & Classification & Impact \\[0pt]
+
+\hline
+\endhead
+\hline\multicolumn{4}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+People & Cashiers &  & \\[0pt]
+ & Janitors &  & \\[0pt]
+ & Customer Service &  & \\[0pt]
+ & Human Resources &  & \\[0pt]
+ & Manager &  & \\[0pt]
+ & Car Wash Attendant &  & \\[0pt]
+ & Store Clerk &  & \\[0pt]
+ &  &  & \\[0pt]
+Hardware & Network Router & Public & Critical\\[0pt]
+ & Wireless Access Point & Private & High\\[0pt]
+ & CCTV Cameras & Private & Medium\\[0pt]
+ & DVR & Private & Medium\\[0pt]
+ & Gas Pumps & Public & Critical\\[0pt]
+ & Point of Sale & Confidential & Critical\\[0pt]
+ & Air Compressor & Public & Low\\[0pt]
+ & Lottery ticket system & Private & High\\[0pt]
+ & Office Computer & Confidential & High\\[0pt]
+ & Backup Servers & Confidential & High\\[0pt]
+ &  &  & \\[0pt]
+Software & Router Operating System & Private & High\\[0pt]
+ & Office Computer OS & Private & High\\[0pt]
+ & Backup Software & Confidential & High\\[0pt]
+ & CCTV Monitoring Software & Private & Medium\\[0pt]
+ & Point of Sale System & Confidential & Critical\\[0pt]
+ & Inventory System & Confidential & Medium\\[0pt]
+ & Mobile Application (Modisoft) & Confidential & High\\[0pt]
+ & Email System & Confidential & High\\[0pt]
+ & Firewall & Confidential & High\\[0pt]
+ &  &  & \\[0pt]
+Business Partners & Gasoline Distributor & Confidential & Critical\\[0pt]
+ & Store Goods Distributor & Private & High\\[0pt]
+ & Car Wash Supplies Distributor & Private & High\\[0pt]
+ & Contractor for Modisoft & Private & Medium\\[0pt]
+ & Contractor for Network Design & Private & High\\[0pt]
+ &  &  & \\[0pt]
+Networking & Off-site Backups & Confidential & High\\[0pt]
+ & Remote DVR Access & Private & Medium\\[0pt]
+ & Private Wireless Access & Private & High\\[0pt]
+ & Local Backups & Confidential & High\\[0pt]
+ & Local Transactions Database & Confidential & Critical\\[0pt]
+ &  &  & \\[0pt]
+Data & Customer Financial Information & Confidential & Critical\\[0pt]
+ & Customer Contact Information & Confidential & Critical\\[0pt]
+ & Account Information & Confidential & High\\[0pt]
+ & Sales Records & Confidential & Medium\\[0pt]
+ & Business Partner Contact Info & Private & Medium\\[0pt]
+ & Inventory Data & Private & Medium\\[0pt]
+\end{longtable}
+
+\section{Vulnerability Enumeration}
+\label{sec:org4308b78}
+\subsection{Point of Sale (Modisoft)}
+\label{sec:org14bc96e}
+Point of Sale can be attacked in such a way that an attacker can lock the software on the POS using ransomware to completely shut down the business. It is worth noting that some ransomware might only make usage of the system challenging, but not encrypt data; in this scenario, the attacker would likely request a ransom for access to the machine back, rather than the data. Our organization will consider this type of ransomware, as much of the data storage is handled by a third-party.
+
+The POS runs bespoke software which includes a login to access both the general user side of the POS, as well the back-end of the software for managers and IT personnel. With the user login, the attacker would be able to see all previous sales, and can do basic functions such as write up transactions. A compromise to this account would not lead to serious damage. A compromise to the Manager login, however, could lead to serious damage. With access to this account, the attacker could erase the contents of the register, financial data and other sensitive information, such as inventory, customer data and so on.
+
+The software also provides remote functionality which can be logged in to with a computer; the method to access this remote management system is a secret link known only to the owner. With said risks above there is one way to ensure an attacker does not have access to this plan and that is having a good password policy. We ran though the system and set a requirement in place to have a strong password and we also made it to require a new password every month that is not one that was used previously. With this an attacker will have a much harder time getting to information and access levels that are considered to be sensitive. On the other hand we must also consider Insider threats here as all employees have access to the user side of things on the POS, what we have done is we created a new login for all employees that run the register and this way if they make an action on the POS it will be tracked and all actions are tied to a person. Now that all of their actions are tracked and noted down then the owner can go into his account and can see what the users are doing and if they are doing something they shouldn't be doing, he can identify who it was and what they did. In addition to this, we ensured that normal users did not have access to sensitive information such as back end operation and if in the case the employee wants to do malicious action their options are very limited and minimize the damage while still ensuring proper work flow and freedom.
+
+\subsection{Credit Card Machine (Verifone)}
+\label{sec:org223abf7}
+After some research we discovered that CC machines are run though Verifone and all the transactions are run though verifone and at the end of the day all the money that owner is owed is run back to the owner with fees and costs subtracted from the company. We initially thought that the owner ran these transactions himself and was forced to store customer data on-premises but we figured out that verifone runs it and ensures proper security measures are taken to keep customers safe. While this is true we did notice that across the United States there are many people that will attach CC skimmers to these machines so we implemented a policy such that at the start of every shift the manager will check the integrity of the machine and ensure that there is no such thing attached to the machine and the machines are untouched and safe to use.
+
+\subsection{Office Computer}
+\label{sec:org6659e95}
+The officer computer from what we have understood is not used very much, the owner tracks most things on paper and does most of the business tracking on a paper and keeps most sensitive things up to the providers such as verifone. Although this is the case we still wanted to ensure that the computer stays safe and avoids any attacks such as ransomware. We set password policies and ensure that the computer was set up in a way where it would be protected from all hackers and incoming attacks for the most part. Since the owner is the only one that uses the computer we ran him through a phishing briefing that is slightly different to that of the one we ran the employees though and ensured he knew about all attacks that can occur over email and the internet.
+
+\subsection{Network Router}
+\label{sec:org00861f2}
+The network router provides routing to each of the different information systems on the network, including the CCTV/DVR system, some of the Point of Sale back-end, the office computer, lottery ticket system and backup server. It's important to note that router operating systems in general can also be the target of attacks and malware. The impact of a ransomware attack, in particular, would be a denial a service to the information systems connected to the network. An attack like this could be the result of several different types of vulnerabilities, such as a direct software exploit to the router's operating system, weak authentication in the router's login, or an attacker could even find a way through the firewall by piggybacking off of vulnerable open ports.
+
+\subsection{Wireless Access Point}
+\label{sec:org9530e8a}
+The wireless access point, similar to the network router, can be the target of ransomware or other attacks which could lead to a denial of service to the organization's information systems. Additionally, however, the access point can also be used as an attack vector for a ransomware infection. For example, by sniffing unencrypted network traffic, an attacker may be able to find information which could be used to gain access to the organization's information systems. Alternatively, an "Evil Twin" attack could be used to trick a user with network access into downloading a piece of ransomware or other malicious software.
+
+\subsection{Email System}
+\label{sec:orgd7a8443}
+Perhaps the most prevalent vector for ransomware, or information security breaches in general for that matter, is email phishing. An attacker may be able to trick an employee of our organization into downloading and executing a malicious piece of software that contains ransomware. In order to perform this social engineering attack, an attacker may spoof their email address to look like the message came from a legitimate source. If an attacker is specifically targeting our organization, they might research an employee whom they consider particularly susceptible in order to send a much more convincing personalized email; this is a process known as spear phishing. Another potential vector, which may be even more destructive to our organization, is a failure of authentication, where an attacker finds a way to log into a valid email account in our organization and then send a malicious email from an official email address. In such an attack, the attacker would also be able to scrape some potentially sensitive information from the compromised email account even if the ransomware attack is unsuccessful.
+
+\section{Risk Ranking Worksheet}
+\label{sec:org9bb5cba}
+\begin{longtable}{llrrr}
+\caption{L=Likelihood, I=Impact, RRF=Risk-Rating Factor}
+\\[0pt]
+Asset & Vulnerability & L & I & RRF\\[0pt]
+\hline
+\endfirsthead
+\multicolumn{5}{l}{Continued from previous page} \\[0pt]
+\hline
+
+Asset & Vulnerability & L & I & RRF \\[0pt]
+
+\hline
+\endhead
+\hline\multicolumn{5}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+Email Service & Phishing & 5 & 4 & 20\\[0pt]
+Network Router & Software Exploit & 3 & 4 & 12\\[0pt]
+Network Router & Weak Authentication & 3 & 3 & 9\\[0pt]
+Network Router & Denial of Service & 4 & 3 & 12\\[0pt]
+Firewall & Open ports/services & 4 & 2 & 8\\[0pt]
+Wireless AP & Denial of Service & 4 & 2 & 8\\[0pt]
+Wireless AP & Sniffing & 3 & 2 & 6\\[0pt]
+Wireless AP & Evil Twin & 1 & 4 & 4\\[0pt]
+Point of Sale & Denial of Service & 2 & 5 & 10\\[0pt]
+Point of Sale & Weak Authentication & 4 & 3 & 12\\[0pt]
+Point of Sale & Vulnerable Remote Login & 5 & 4 & 20\\[0pt]
+Office Computer & Network Connection & 1 & 3 & 3\\[0pt]
+Office Computer & Weak Authentication & 3 & 3 & 9\\[0pt]
+CC Machine & Service Provider Vulnerability & 1 & 4 & 4\\[0pt]
+CC Machine & Denial of Service & 1 & 5 & 5\\[0pt]
+CC Machine & Weak Authentication & 2 & 5 & 10\\[0pt]
+CCTV/DVR & Weak Authentication & 3 & 1 & 3\\[0pt]
+CCTV/DVR & Denial of Service & 1 & 1 & 1\\[0pt]
+\end{longtable}
+
+\section{Mitigation Strategy}
+\label{sec:org87c667a}
+\subsection{Access Control}
+\label{sec:org53eaa83}
+Access control will be a large component of our mitigation strategy for ransomware. By controlling access to files across the systems in our organization, we can minimize the impact that ransomware would have in the event that one system is compromised. The exact specifications of the access control policies use will differ based on the system, so system-specific policies should be consulted for the implementation of this security control. Our organization will likely start out with a simple RBAC-style access control model, with a plan to upgrade to a more robust and expandable system in the future. For this reason, the underlying access control software should be ABAC-based (attribute-based access control), with RBAC implemented on top of it.
+
+\subsection{Antivirus}
+\label{sec:org8ea6f62}
+Another critical component of our organization's mitigation strategy is reliable antivirus software. Antivirus software can be used to detect known malicious software, and either prevent that software from running, or alert system administrators to the threat. This software needs to be kept up-to-date in accordance with the issue-specific policy, and the requirements for antivirus software on different system platforms should be consulted from the issue-specific policy as well before implementation.
+
+\subsection{Intrusion Detection System}
+\label{sec:orga33bf58}
+The first step to mitigating a ransomware attack is determining that an attack has happened, and how it happened. An adequate IDS should also be implemented as specified in the ransomware issue-specific policy section. Such a system should be capable of alerting system administrators to any suspicious activities such as unusual network traffic or large amounts of data being written (this could be the encryption of data).
+
+\subsection{Backups}
+\label{sec:org7ae7bf1}
+In some cases, there may not be any clear route to recovering data after a ransomware attack. In order to mitigate damages in these cases, our organization must ensure that proper backups are being kept regularly, and in a space, time and cost effective manner. The specifications for our organization's backup procedures can be found in the ransomware issue-specific policy.
+
+\subsection{Forensic Readiness}
+\label{sec:org5cd52e2}
+Recovering from ransomware can be very costly for our organization; replacement of assets, down-time, implementation of additional security controls, and extra consultancy could easily be a critical loss for our organization. Thus, a plan to remedy these losses in a court of law should be kept for cases in which legal action is a sensible option. In order to submit evidence that is admissible in court, it is critical that certain measure be taken to ensure forensic readiness and competency. More details about our organization's procedures can be found in the ransomware issue-specific policy.
+
+\subsection{Immutable Systems}
+\label{sec:orgcba07e4}
+While our organization has no current policy in place for using immutable systems to mitigate ransomware attacks, recent technology in this field should be assessed at a later date as systems are replaced with newer hardware and/or software. An immutable system can prevent invasive changes being made by any user; while this has unfortunate consequences for the speed at which information systems can be modified and updated by security and IT personnel, the security benefits are worth investigating for future systems.
+\end{document}

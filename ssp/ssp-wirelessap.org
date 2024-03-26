@@ -1,0 +1,24 @@
+#+TITLE: System Specific Policy for Wireless Access Points
+#+AUTHOR: Semir Hot, Harrison Maksimik
+* Statement of Policy
+** Purpose
+The purpose of this policy is to provide a set of procedures that should be implemented when interacting with and setting up wireless access points in our organization's network. 
+
+** Scope
+The scope of this system-specific policy extends only to the wireless access point systems which are connected to our organization's network, all data that travels over this wireless access point, and all users who connect to, configure, or view traffic from these devices.
+
+** Responsibilities
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and to keep this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+* Security Controls
+** Authentication
+Our organization's password policy must be adhered to by all users of the wireless access point system. The same credentials used in Modisoft should be the credentials used to access our organization's wireless network. A guest network can be created which is fully segregated from all other subnets, however, guest network access should be restricted to only contractors and other third-party workers who do not have a Modisoft account. WPA3 should be used for wireless access point authentication, and the administrator login should be changed from the factory default immediately upon installation.
+
+** Encryption of Data
+Any sensitive data being transmitted over the wireless network should be encrypted using protocols such as SSL. Should an employee be prompted to enter sensitive data over a non-secure connection (i.e. via HTTP rather than HTTPS), management should be notified before any information is submitted. Some systems may require a connection to a private VPN within our network in order to ensure encryption over transit, or in order to access systems from outside our physical network.
+
+** Device Settings
+It is recommended that employees disable the auto-connect feature of their wireless devices; some attackers may create fake networks with identical SSIDs in order to trick auto-connect systems into logging into the fake network. It may then be possible for an attacker to perform a man-in-the-middle attack, in which an otherwise safe download is replaced with a fake, malicious program. This could be a concerning vector for ransomware.
+
+* Scheduled Reviews
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the /Security Controls/ section should be carefully reviewed during this time.

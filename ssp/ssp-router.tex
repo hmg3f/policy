@@ -1,0 +1,70 @@
+% Created 2024-03-10 Sun 13:54
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Semir Hot, Harrison Maksimik}
+\date{\today}
+\title{System Specific Policy for Network Router Protection from Ransomware}
+\hypersetup{
+ pdfauthor={Semir Hot, Harrison Maksimik},
+ pdftitle={System Specific Policy for Network Router Protection from Ransomware},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.2 (Org mode 9.6.12)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Statement of Policy}
+\label{sec:org2ce9cb3}
+\subsection{Purpose}
+\label{sec:orgb0fb1af}
+The purpose of this policy is to create a set of guidelines for the implementation of security systems on our organization's network router. The network router serves as a gateway for attack to other systems on our organization's network, and ensuring that proper hardening measures are taken on the router will reduce the likelihood of attack on more critical systems. Thus, the goal of this document is to describe three security measures that should be implemented on any network routers added to our organization.
+
+\subsection{Scope}
+\label{sec:orge5ecbb4}
+This policy applies to all network routers used in our Phillips 66 branch. Any system administrator or contractor responsible for configuring and maintaining network router hardware and software should have read, understood, and follow the guidelines listed in this document.
+
+\subsection{Responsibilities}
+\label{sec:org77e8750}
+It should be the responsibility of the CISO to respond to new business needs not considered in this document, and keep to this document up-to-date. System administrators, contractors and other qualified personnel, along with third-party workers, should be responsible for the implementation of the listed security measures. All other employees and workers should be responsible for following the spirit of this document; it should not be acceptable to circumvent the security controls implemented as described in this document. Should new business needs conflict with these controls, a notice containing relevant details should be sent as soon as possible to the employee's line manager, other information security personnel, or the CISO via email.
+
+\section{Technical Specifications}
+\label{sec:org7c5e931}
+\subsection{Subnets}
+\label{sec:orgbdcade2}
+Our organization should ensure that the network routers used can facilitate the creation of several subnets in order to contain ransomware and other malware infections into only small portions of the network. Subnets which contain more critical assets should have stronger firewall settings, as described in the system-specific policy for firewalls. Subnets should be created for each individual information system, and an additional subnet should be made for employee devices. As of the current iteration of this document, the following subnets should be created:
+
+\begin{itemize}
+\item CCTV/DVR subnet
+\item Office Computer subnet
+\item Backup Servers subnet
+\item POS System subnet (Modisoft)
+\item Employee Devices/Wireless Access subnet
+\end{itemize}
+
+\subsection{Access control}
+\label{sec:org481cc4c}
+Our organization's network contains several systems, each of which should be accessed by different communities of interest. In order to facilitate both confidentiality and accessibility, as well as to prevent the spread of ransomware and other malware outside of the systems of the infected community of interest, a strong access control policy should be implemented for all network shared devices and data. The specific implementation details of this access control model are defined more in the issue-specific policy on ransomware, and a separate system-specific policy.
+
+\subsection{Authentication}
+\label{sec:orgf2d8d3f}
+In order to ensure the integrity of the software and configuration of the network router, our organization must mandate the use of strong passwords and authentication strategies for all users with access to the router. If unauthorized users attain access to the control panel of the router, all other network-based security controls can be disabled, leading to a high risk of ransomware or other malware infection in the system, as well as loss of CIA. The specific requirements for password complexity should be described by a separate system-specific policy for password creation, as password requirement change frequently.
+
+\section{Scheduled Reviews}
+\label{sec:orgbb2b7c3}
+This policy should be reviewed by the CISO and other parties of interest on an annual basis. New technologies may make the current security controls obsolete in the future; each of the provided guidelines under the \emph{Security Controls} section should be carefully reviewed during this time.
+\end{document}
